@@ -1,7 +1,13 @@
+:root {
+    --clr-card:       #494242;
+    --clr-card-hover: #993434;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 #map {
@@ -50,7 +56,7 @@
   width: 90%;
   height: auto;
   padding: 10px 20px;
-  background: #ffffff80;
+  background: #ffffff20;
   backdrop-filter: blur(4px);
   border-radius: 25px;
 }
@@ -92,6 +98,8 @@
 /* cards */
 .cards {
     display: flex;
+    gap: 50px;
+    padding: 0 15px;
 }
 /* .card {
   display: flex;
@@ -106,24 +114,67 @@
   display: none !important;
 }
 
-@media screen and (min-width: 680px) {
-  .modal-content {
-    width: 50%;
-  }
-}
 
 
 .card {
+    position: relative;
     width: 300px;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f949;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px var(--clr-card);
+    background: #ffffff50;
     padding: 20px;
     max-width: 400px;
     margin: 20px auto;
-    backdrop-filter: blur(10px);
+    user-select: none;
+    transition: .25s;
+    animation: appears 1s linear forwards;
+    animation-delay: var(--i);
+}
+@keyframes appears {
+    0% {
+        transform: rotateY(90deg);
+    }
+    100% {
+        transform: none;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0 3px var(--clr-card-hover);
+    background: #ffffff80;
+}
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    transition: .25s;
+}
+
+.card::before {
+    top: -5px;
+    left: -5px;
+    border-top-left-radius: 15px;
+    border-top: 9px solid var(--clr-card);
+    border-left: 9px solid var(--clr-card);
+}
+
+.card::after {
+    right: -5px;
+    bottom: -5px;
+    border-bottom-right-radius: 15px;
+    border-right: 9px solid var(--clr-card);
+    border-bottom: 9px solid var(--clr-card);
+}
+
+.card:hover::before,
+.card:hover::after {
+    border-color: var(--clr-card-hover);
+    width: 85%;
+    height: 85%;
 }
 
 .card > div {
@@ -133,15 +184,59 @@
 .card img {
   width: 120px;
   height: 120px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   object-fit: contain;
 }
 
 .card div:first-child img {
   border-radius: 50%;
-  border: 5px solid #4b4b4b;
+  box-shadow: 0 0 3px var(--clr-card);
+  transition: .25s;
 }
 
+.card:hover div:first-child img {
+    object-fit: cover;
+    object-position: top;
+}
+
+.card:hover div:first-child img {
+    box-shadow: 0 0 3px var(--clr-card-hover);
+}
+
+.card div:first-child h3 {
+    transition: .25s;
+}
+
+.card:hover div:first-child h3 {
+    letter-spacing: .05rem;
+}
+.card div:first-child p {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin-bottom: 0;
+    transition: .25s;
+}
+
+.card:hover div:first-child p {
+    background: var(--clr-card-hover);
+    color: #d9d9d9;
+}
+.card div:first-child p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 30%;
+    height: 2px;
+    background: var(--clr-card);
+    transition: .25s;
+}
+
+.card:hover div:first-child p::before {
+    width: 100%;
+    background: var(--clr-card-hover);
+}
 .card h3 {
   margin: 0;
   font-size: 20px;
@@ -156,14 +251,36 @@
 }
 
 .card .small-img {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   margin-top: 10px;
   border-radius: 0;
+  transform: scale(.85);
+  transition: .25s;
+}
+
+.card:hover .small-img {
+    transform: scale(1);
 }
 
 .card .stacks {
     display: flex;
     justify-content: center;
     gap: 15px;
+    border-radius: 0 0 7px 7px;
+    transition: .25s;
 }
+
+.card:hover .stacks {
+    background: var(--clr-card-hover);
+}
+
+.card:hover .stacks .mysql {
+    filter: brightness(2);
+}
+
+@media screen and (min-width: 680px) {
+    .modal-content {
+      width: auto;
+    }
+  }
