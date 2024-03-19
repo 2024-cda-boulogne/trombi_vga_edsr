@@ -129,7 +129,8 @@
     margin: 20px auto;
     user-select: none;
     transition: .25s;
-    animation: appears 1s linear forwards;
+    transform: rotateY(90deg);
+    animation: appears .5s linear forwards;
     animation-delay: var(--i);
 }
 @keyframes appears {
@@ -152,6 +153,7 @@
     width: 25%;
     height: 25%;
     transition: .25s;
+    z-index: -1;
 }
 
 .card::before {
@@ -263,6 +265,20 @@
     transform: scale(1);
 }
 
+.card .social-medias {
+    height: 50px;
+    display: flex;
+}
+.card .social-medias a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.github {
+    background-image: url(/img/github-logo.png);
+    background-size: 140%;
+    background-position: center center;
+}
 .card .stacks {
     display: flex;
     justify-content: center;

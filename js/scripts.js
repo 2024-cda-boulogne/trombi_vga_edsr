@@ -33,6 +33,7 @@ const markers = {
                 firstname: "Vivien",
                 lastname:  "Gajac",
                 image:     "vivien.png",
+                github:    "viviengajac",
                 stacks: {
                            0: "JS",
                            1: "PHP",
@@ -44,6 +45,7 @@ const markers = {
                 firstname: "William",
                 lastname:  "Truant",
                 image:     "William.png",
+                github:    "notlimai",
                 stacks: {
                            0: "Symfony",
                            1: "React",
@@ -214,6 +216,7 @@ window.addEventListener("click", (e) => {
         case "modal":
         case "closeModal":
             modal.classList.toggle("hidden");
+            deleteAllCards();
         break;
         case "":
             switch (e.target.className)
@@ -226,6 +229,12 @@ window.addEventListener("click", (e) => {
     }
 });
 
+const deleteAllCards = () => {
+    const cards = document.querySelector(".cards");
+    while (cards.firstChild) {
+        cards.removeChild(cards.firstChild);
+    }
+}
 const popModal = (city) => {
     hydrateModal(city);
     modal.classList.toggle("hidden");
@@ -252,12 +261,17 @@ const hydrateModal = (city => {
         typescript: "Typescript_logo_2020.svg.png",
         nodejs:    "node.png",
     }
+
     const cards = document.querySelector(".cards");
+
+    let i = 0;
 
     for (const [key, value] of Object.entries(markers[city]["people"])) {
 // console.log(value)
         let card = document.createElement("div");
         card.classList.add("card");
+        card.setAttribute("style", `--i: ${i}s`);
+        i+=.5;
 
         let cardTop = document.createElement("div");
 
@@ -266,6 +280,15 @@ const hydrateModal = (city => {
 
         let title = document.createElement("h3");
         title.textContent = `${value["firstname"]} ${value["lastname"]}`;
+
+        let socialMedias = document.createElement("div");
+        socialMedias.classList.add("social-medias");
+        let github = document.createElement("a");
+        github.setAttribute("href", `https://github.com/${value["github"]}`);
+        github.setAttribute("target", "_blank");
+        github.classList.add("github");
+        // github.textContent = "GitHub";
+        socialMedias.appendChild(github);
 
         let stacksTitle = document.createElement("p");
         stacksTitle.textContent = "Les stacks";
@@ -285,6 +308,7 @@ const hydrateModal = (city => {
 
         cardTop.appendChild(picture);
         cardTop.appendChild(title);
+        cardTop.appendChild(socialMedias);
         cardTop.appendChild(stacksTitle);
 
         card.appendChild(cardTop);
