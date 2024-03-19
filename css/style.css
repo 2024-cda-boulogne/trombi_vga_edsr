@@ -11,7 +11,6 @@
 }
 .leaflet-marker-icon:hover {
     filter: hue-rotate(145deg);
-    transform: scale(1.05);
 }
 
 .leaflet-popup-content-wrapper {
@@ -86,6 +85,16 @@
 }
 #closeModal span:nth-child(2) {
     transform: rotate(-45deg);
+}
+
+/* cards */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 150px;
+    height: 320px;
+    border-radius: 10px;
 }
 /* dynamic */
 .hidden {

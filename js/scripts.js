@@ -24,7 +24,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 const markers = {
-    BoulogneSurMer:        {
+    BoulogneSurMer: {
         name:   "Boulogne-sur-Mer",
         x:      50.716671,
         y:      1.61667,
@@ -32,18 +32,19 @@ const markers = {
             VivienGajac: {
                 firstname: "Vivien",
                 lastname:  "Gajac",
-                stack:     {
-                    0: "HTML",
-                    1: "CSS",
-                    2: "JS",
-                    3: "PHP",
-                    4: "MySQL",
-                    5: "Symfony",
+                image:     "",
+                stack: {
+                           0: "HTML",
+                           1: "CSS",
+                           2: "JS",
+                           3: "PHP",
+                           4: "MySQL",
+                           5: "Symfony",
                 },
             },
         },
     },
-    Desvres:               {
+    Desvres: {
         name:   "Desvres",
         x:      50.666672,
         y:      1.83333,
@@ -51,7 +52,7 @@ const markers = {
 
         },
     },
-    Ecques:                {
+    Ecques: {
         name:   "Ecques",
         x:      50.666672,
         y:      2.28333,
@@ -67,7 +68,7 @@ const markers = {
 
         },
     },
-    Marquise:              {
+    Marquise: {
         name:   "Marquise",
         x:      50.816669,
         y:      1.7,
@@ -75,7 +76,7 @@ const markers = {
 
         },
     },
-    Outreau:               {
+    Outreau: {
         name:   "Outreau",
         x:      50.700001,
         y:      1.58333,
@@ -83,7 +84,7 @@ const markers = {
 
         },
     },
-    SaintAndreLesLille:    {
+    SaintAndreLesLille: {
         name:   "Saint-André-lez-Lille",
         x:      50.66097900,
         y:      3.04773600,
@@ -91,7 +92,7 @@ const markers = {
 
         },
     },
-    SaintEtienneAuMont:    {
+    SaintEtienneAuMont: {
         name:   "Saint-Étienne-au-Mont",
         x:      50.666672,
         y:      1.61667,
@@ -99,7 +100,7 @@ const markers = {
 
         },
     },
-    Samer:                 {
+    Samer: {
         name:   "Samer",
         x:      50.633333,
         y:      1.75,
@@ -144,6 +145,11 @@ const popModal = (city) => {
 
 const hydrateModal = (city => {
     Object.entries(markers[city]['people']).forEach(entry => {
-        console.log(entry);
+        let card = document.createElement("div");
+        card.classList.add("card");
+
+        let picture = document.createElement("div");
+        picture.classList.add("card-picture");
+        picture.style.backgroundImage = `url("assets/images/${entry["image"]})`;
     });
 });
