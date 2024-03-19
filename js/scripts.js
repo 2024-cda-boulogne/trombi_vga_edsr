@@ -56,7 +56,15 @@ const markers = {
         x:      50.666672,
         y:      1.83333,
         people: {
-
+            0: {
+                firstname: "Kevin",
+                lastname:  "Ledez",
+                image:     "kevin.png",
+                stacks: {
+                           1: "Symfony",
+                           2: "Angular",
+                },
+            },
         },
     },
     Ecques: {
@@ -64,7 +72,17 @@ const markers = {
         x:      50.666672,
         y:      2.28333,
         people: {
-
+            0: {
+                firstname: "Jean-Baptiste",
+                lastname:  "Lavisse",
+                image:     "JB.jpg",
+                stacks: {
+                           1: "nextjs",
+                           2: "vue",
+                           5: "React",
+                           6: "Symfony",
+                },
+            },
         },
     },
     LaCappelleLesBoulogne: {
@@ -72,7 +90,17 @@ const markers = {
         x:      50.73333,
         y:      1.7,
         people: {
-
+            0: {
+                firstname: "Théo",
+                lastname:  "Couvelard",
+                image:     "theo_C.webp",
+                stacks: {
+                           1: "nextjs",
+                           2: "express",
+                           3: "nodejs",
+                           4: "typescript",
+                },
+            },
         },
     },
     Marquise: {
@@ -80,7 +108,15 @@ const markers = {
         x:      50.816669,
         y:      1.7,
         people: {
-
+            0: {
+                firstname: "Geoffrey",
+                lastname:  "Noel",
+                image:     "Geoffrey.webp",
+                stacks: {
+                           1: "React",
+                           2: "Symfony",
+                },
+            },
         },
     },
     Outreau: {
@@ -88,7 +124,24 @@ const markers = {
         x:      50.700001,
         y:      1.58333,
         people: {
-
+            0: {
+                firstname: "Karl",
+                lastname:  "Gavois",
+                image:     "Karl.webp",
+                stacks: {
+                           1: "React",
+                           2: "Symfony",
+                },
+            },
+            1: {
+                firstname: "Eric",
+                lastname:  "Da Silva Rocha",
+                image:     "Eric.png",
+                stacks: {
+                           1: "React",
+                           2: "Symfony",
+                },
+            },
         },
     },
     SaintAndreLesLille: {
@@ -96,7 +149,17 @@ const markers = {
         x:      50.66097900,
         y:      3.04773600,
         people: {
-
+            0: {
+                firstname: "Alexandre",
+                lastname:  "Merlin",
+                image:     "Alex_M.png",
+                stacks: {
+                           1: "dotnet",
+                           2: "React",
+                           3: "Angular",
+                           4: "Csharp",
+                },
+            },
         },
     },
     SaintEtienneAuMont: {
@@ -104,7 +167,16 @@ const markers = {
         x:      50.666672,
         y:      1.61667,
         people: {
-
+            0: {
+                firstname: "Théo",
+                lastname:  "Duflos",
+                image:     "Theo_D.png",
+                stacks: {
+                           1: "Angular",
+                           2: "Java",
+                           3: "dotnet",
+                },
+            },
         },
     },
     Samer: {
@@ -112,7 +184,16 @@ const markers = {
         x:      50.633333,
         y:      1.75,
         people: {
-
+            0: {
+                firstname: "Nicolas",
+                lastname:  "Herbez",
+                image:     "Nicolas.jpg",
+                stacks: {
+                           1: "PHP",
+                           2: "Symfony",
+                           3: "JS",
+                },
+            },
         },
     },
 };
@@ -161,6 +242,15 @@ const hydrateModal = (city => {
         Angular: "Angular_full_color_logo.svg.png",
         React:   "React-icon.svg.png",
         Symfony: "symfony-original-icon-512x512-ay9yzmde.png",
+        Java:    "Java_Logo.svg",
+        dotnet:  "Microsoft_.NET_Logo.svg.png",
+        Csharp:  "Logo_C_sharp.svg",
+        nextjs:  "next-js.svg",
+        vue:     "Vue.js_Logo_2.svg",
+        express: "expressjs-icon.svg",
+        django:  "django.svg",
+        typescript: "Typescript_logo_2020.svg.png",
+        nodejs:    "node.png",
     }
     const cards = document.querySelector(".cards");
 
