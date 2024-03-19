@@ -29,17 +29,24 @@ const markers = {
         x:      50.716671,
         y:      1.61667,
         people: {
-            VivienGajac: {
+            0: {
                 firstname: "Vivien",
                 lastname:  "Gajac",
-                image:     "",
-                stack: {
-                           0: "HTML",
-                           1: "CSS",
-                           2: "JS",
-                           3: "PHP",
-                           4: "MySQL",
-                           5: "Symfony",
+                image:     "vivien.png",
+                stacks: {
+                           0: "JS",
+                           1: "PHP",
+                           2: "MySQL",
+                           3: "Symfony",
+                },
+            },
+            1: {
+                firstname: "William",
+                lastname:  "Truant",
+                image:     "William.png",
+                stacks: {
+                           0: "Symfony",
+                           1: "React",
                 },
             },
         },
@@ -144,12 +151,55 @@ const popModal = (city) => {
 };
 
 const hydrateModal = (city => {
-    Object.entries(markers[city]['people']).forEach(entry => {
+
+    const stackImages = {
+        HTML:    "html-1.svg",
+        CSS:     "w3_css-icon.svg",
+        JS:      "javascript-1.svg",
+        PHP:     "PHP-logo.svg.png",
+        MySQL:   "mysql-logo-svgrepo-com.svg",
+        Angular: "Angular_full_color_logo.svg.png",
+        React:   "React-icon.svg.png",
+        Symfony: "symfony-original-icon-512x512-ay9yzmde.png",
+    }
+    const cards = document.querySelector(".cards");
+
+    for (const [key, value] of Object.entries(markers[city]["people"])) {
+// console.log(value)
         let card = document.createElement("div");
         card.classList.add("card");
 
-        let picture = document.createElement("div");
-        picture.classList.add("card-picture");
-        picture.style.backgroundImage = `url("assets/images/${entry["image"]})`;
-    });
+        let cardTop = document.createElement("div");
+
+        let picture = document.createElement("img");
+        picture.setAttribute("src", `img/${value["image"]}`);
+
+        let title = document.createElement("h3");
+        title.textContent = `${value["firstname"]} ${value["lastname"]}`;
+
+        let stacksTitle = document.createElement("p");
+        stacksTitle.textContent = "Les stacks";
+
+        let stacks = document.createElement("div");
+        stacks.classList.add("stacks");
+
+        for (const [key, stack] of Object.entries(value["stacks"])) {
+            console.log(stack);
+            console.log(`img/${stackImages[stack]}`);
+            let newStack = document.createElement("img");
+            newStack.classList.add("small-img");
+            newStack.setAttribute("src", `img/${stackImages[stack]}`);
+
+            stacks.appendChild(newStack);
+        }
+
+        cardTop.appendChild(picture);
+        cardTop.appendChild(title);
+        cardTop.appendChild(stacksTitle);
+
+        card.appendChild(cardTop);
+        card.appendChild(stacks);
+
+        cards.appendChild(card);
+    };
 });
