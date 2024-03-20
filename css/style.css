@@ -122,21 +122,13 @@
     gap: 50px;
     padding: 0 15px;
 }
-/* .card {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 150px;
-  height: 320px;
-  border-radius: 10px;
-} */
+
 /* dynamic */
 .hidden {
   display: none !important;
 }
 
-
-
+/* card */
 .card {
     position: relative;
     width: 300px;
@@ -144,7 +136,6 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 3px var(--clr-card);
-    /* background: #ffffff50; */
     background: linear-gradient(45deg, #ffffff50 10%, #ffffffbb, #ffffff50 90%);
     padding: 20px;
     max-width: 400px;
@@ -220,10 +211,51 @@
 }
 
 .card:hover div:first-child img {
+  transform: translateX(-40%);
     object-fit: cover;
     object-position: top;
     background: radial-gradient(#1b1414e3 30%, var(--clr-card-hover));
     box-shadow: 0 0 10px var(--clr-card-hover);
+}
+
+.card div:first-child {
+  position: relative;
+}
+
+.card .hobbies {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  transition: .25s;
+}
+
+.card .hobbies p:first-child {
+  font-size: 1.1rem;
+  margin-bottom: .5rem;
+}
+.card .hobbies p {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  font-size: .9rem;
+  transition: .25s;
+}
+.card:hover .hobbies p {
+  opacity: 1;
+}
+.card:hover .hobbies p:nth-child(1) {
+  transition-delay: .25s;
+}
+.card:hover .hobbies p:nth-child(2) {
+  transition-delay: .5s;
+}
+.card:hover .hobbies p:nth-child(3) {
+  transition-delay: .75s;
 }
 
 .card div:first-child h3 {
@@ -233,21 +265,22 @@
 .card:hover div:first-child h3 {
     letter-spacing: .05rem;
 }
-.card div:first-child p {
+.card div:nth-child(2):not(.hobbies) p {
     position: relative;
     display: flex;
     justify-content: center;
     padding-top: 10px;
     margin-bottom: 0;
+    font-size: 1.1rem;
     transition: .25s;
 }
 
-.card:hover div:first-child p {
+.card:hover div:nth-child(2):not(.hobbies) p {
     background: var(--clr-card-hover);
     color: #d9d9d9;
     letter-spacing: .05rem;
 }
-.card div:first-child p::before {
+.card div:nth-child(2):not(.hobbies) p::before {
     content: '';
     position: absolute;
     top: 0;
@@ -257,7 +290,7 @@
     transition: .25s;
 }
 
-.card:hover div:first-child p::before {
+.card:hover div:nth-child(2):not(.hobbies) p::before {
     width: 100%;
     background: var(--clr-card-hover);
 }

@@ -33,6 +33,10 @@ const markers = {
                 firstname: "Vivien",
                 lastname:  "Gajac",
                 image:     "vivien.png",
+                hobbies: {
+                    0: "Jeux vidéo",
+                    1: "Guitare",
+                },
                 github:    "viviengajac",
                 linkedin:  "vivien-gajac-b43a0b2a2",
                 stacks: {
@@ -46,6 +50,9 @@ const markers = {
                 firstname: "William",
                 lastname:  "Truant",
                 image:     "William.png",
+                hobbies: {
+                    0: "Jeux vidéo",
+                },
                 github:    "notlimai",
                 linkedin:  "william-truant-b57b92244",
                 stacks: {
@@ -288,10 +295,22 @@ const hydrateModal = (city => {
         i+=.25;
 
         let cardTop = document.createElement("div");
+        let cardBottom = document.createElement("div");
 
         let picture = document.createElement("img");
         picture.setAttribute("src", `img/${value["image"]}`);
 
+        let hobbies = document.createElement("div");
+        hobbies.classList.add("hobbies");
+        let hobbiesTitle = document.createElement("p");
+        hobbiesTitle.textContent = "Les hobbies";
+        hobbies.appendChild(hobbiesTitle);
+        for (const [key, hobby] of Object.entries(value["hobbies"])) {
+            let newHobby = document.createElement("p");
+            newHobby.textContent = hobby;
+            hobbies.appendChild(newHobby);
+        }
+        
         let title = document.createElement("h3");
         title.textContent = `${value["firstname"]} ${value["lastname"]}`;
 
@@ -316,8 +335,8 @@ const hydrateModal = (city => {
         stacks.classList.add("stacks");
 
         for (const [key, stack] of Object.entries(value["stacks"])) {
-            console.log(stack);
-            console.log(`img/${stackImages[stack]}`);
+            // console.log(stack);
+            // console.log(`img/${stackImages[stack]}`);
             let newStack = document.createElement("img");
             newStack.classList.add("small-img");
             newStack.setAttribute("src", `img/${stackImages[stack]}`);
@@ -340,11 +359,13 @@ const hydrateModal = (city => {
         }
 
         cardTop.appendChild(picture);
-        cardTop.appendChild(title);
-        cardTop.appendChild(socialMedias);
-        cardTop.appendChild(stacksTitle);
+        cardTop.appendChild(hobbies);
+        cardBottom.appendChild(title);
+        cardBottom.appendChild(socialMedias);
+        cardBottom.appendChild(stacksTitle);
 
         card.appendChild(cardTop);
+        card.appendChild(cardBottom);
         card.appendChild(stacks);
 
         cards.appendChild(card);
