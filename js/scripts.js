@@ -71,6 +71,13 @@ const markers = {
                 firstname: "Kevin",
                 lastname:  "Ledez",
                 image:     "kevin.png",
+                hobbies: {
+                    0: "Jeux vidéo",
+                    1: "Programmation",
+                    2: "Musique",
+                },
+                github:    "kevin-ledez",
+                linkedin:  "kevin-ledez/",
                 stacks: {
                            1: "Symfony",
                            2: "Angular",
@@ -87,6 +94,12 @@ const markers = {
                 firstname: "Jean-Baptiste",
                 lastname:  "Lavisse",
                 image:     "JB.jpg",
+                hobbies: {
+                    0: "Piano",
+                    1: "Cinéma",
+                },
+                github:    "jblavisse",
+                linkedin:  "jblavisse",
                 stacks: {
                            1: "nextjs",
                            2: "vue",
@@ -105,6 +118,12 @@ const markers = {
                 firstname: "Théo",
                 lastname:  "Couvelard",
                 image:     "theo_C.webp",
+                hobbies: {
+                    0: "Musculation",
+                    1: "Jeux video",
+                },
+                github:    "Theo02-12",
+                linkedin:  "théo-couvelard-4089111b5/",
                 stacks: {
                            1: "nextjs",
                            2: "express",
@@ -123,6 +142,11 @@ const markers = {
                 firstname: "Geoffrey",
                 lastname:  "Noel",
                 image:     "Geoffrey.webp",
+                hobbies: {
+                    0: "Basket-ball",
+                },
+                github:    "Geoffrey184",
+                linkedin:  "geoffrey-noel-093683269/",
                 stacks: {
                            1: "React",
                            2: "Symfony",
@@ -139,6 +163,12 @@ const markers = {
                 firstname: "Karl",
                 lastname:  "Gavois",
                 image:     "Karl.webp",
+                hobbies: {
+                    0: "Jeux vidéo",
+                    1: "Formule 1"
+                },
+                github:    "Karl-Gavois",
+                linkedin:  "karl-gavois/",
                 stacks: {
                            1: "React",
                            2: "Symfony",
@@ -148,6 +178,11 @@ const markers = {
                 firstname: "Eric",
                 lastname:  "Da Silva Rocha",
                 image:     "Eric.png",
+                hobbies: {
+                    0: "Jeux vidéo",
+                },
+                github:    "Ericdsr",
+                linkedin:  "eric-da-silva-rocha/",
                 stacks: {
                            1: "React",
                            2: "Symfony",
@@ -164,6 +199,12 @@ const markers = {
                 firstname: "Alexandre",
                 lastname:  "Merlin",
                 image:     "Alex_M.png",
+                hobbies: {
+                    0: "Jeux vidéo",
+                    1: "Peinture"
+                },
+                github:    "Merlinovitch",
+                linkedin:  "alexandre-merlin-82a395a8/",
                 stacks: {
                            1: "dotnet",
                            2: "React",
@@ -182,6 +223,13 @@ const markers = {
                 firstname: "Théo",
                 lastname:  "Duflos",
                 image:     "Theo_D.png",
+                hobbies: {
+                    0: "Jeux vidéo",
+                    1: "Cinéma",
+                    2: "Animé",
+                },
+                github:    "Yokokorico",
+                linkedin:  "théo-duflos-8625a8262/",
                 stacks: {
                            1: "Angular",
                            2: "Java",
@@ -199,6 +247,12 @@ const markers = {
                 firstname: "Nicolas",
                 lastname:  "Herbez",
                 image:     "Nicolas.jpg",
+                hobbies: {
+                    0: "Programmation",
+                    1: "Café",
+                },
+                github:    "nicolas-herbez",
+                linkedin:  "nicolas-herbez-hdf/",
                 stacks: {
                            1: "PHP",
                            2: "Symfony",
