@@ -25,6 +25,7 @@ const switchTheme = (theme) => {
                 "code-example-bg":     "#f8f8f8",
                 "code-example-text":   "#3D7B7B",
                 "code-example-border": "#eaecf0",
+                "map-style-p":         "#1b7a46",
             },
         },
         "dark": {
@@ -43,6 +44,7 @@ const switchTheme = (theme) => {
                 "code-example-bg":     "#414141",
                 "code-example-text":   "#9fcece",
                 "code-example-border": "#59645e",
+                "map-style-p":         "#7ad4a3",
             },
         },
     };

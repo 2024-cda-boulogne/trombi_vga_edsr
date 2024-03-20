@@ -17,13 +17,6 @@ if (window.innerWidth > 680)
     zoom = 8;
 }
 
-// let map = L.map('map').setView([xMap, yMap], zoom);
-
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
-
 const key = 'pgdNIeiA9riZaGOUspQU';
 
 const map = L.map('map').setView([xMap, yMap], zoom);
@@ -36,7 +29,7 @@ const mapStyleBtns = document.querySelectorAll(".map-style");
 mapStyleBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector(".map-btn-active").classList.toggle("map-btn-active");
-        let style = L.MaptilerStyle.STREETS;
+        let style = L.MaptilerStyle.BACKDROP;
         switch (btn.id)
         {
             case 'backdrop':
@@ -53,6 +46,9 @@ mapStyleBtns.forEach(btn => {
             break;
             case 'landscape':
                 style = L.MaptilerStyle.LANDSCAPE;
+            break;
+            case 'ocean':
+                style = L.MaptilerStyle.OCEAN;
             break;
             case 'openstreetmap':
                 style = L.MaptilerStyle.OPENSTREETMAP;
@@ -79,6 +75,24 @@ mapStyleBtns.forEach(btn => {
         mtLayer.setStyle(style);
         btn.classList.toggle("map-btn-active");
     });
+});
+
+
+const nav = document.querySelector("#nav");
+const carousel = document.querySelector(".carousel");
+
+carousel.addEventListener("wheel", (e) => {
+    let move = e.deltaY;
+    nav.scrollLeft += move;
+});
+
+const previousStyle = document.querySelector("#previousStyle");
+const nextStyle = document.querySelector("#nextStyle");
+previousStyle.addEventListener("click", () => {
+    nav.scrollLeft -= 100;
+});
+nextStyle.addEventListener("click", () => {
+    nav.scrollLeft += 100;
 });
 
 const markers = {
