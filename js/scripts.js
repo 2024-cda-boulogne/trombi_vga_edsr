@@ -22,7 +22,7 @@ const key = 'pgdNIeiA9riZaGOUspQU';
 const map = L.map('map').setView([xMap, yMap], zoom);
 const mtLayer = L.maptilerLayer({
 apiKey: key,
-style: L.MaptilerStyle.TONER, // optional
+style: L.MaptilerStyle.BACKDROP, // optional
 }).addTo(map);
 
 const mapStyleBtns = document.querySelectorAll(".map-style");
@@ -335,24 +335,31 @@ const markers = {
     },
 };
 
+const flagIcon = L.icon({
+    iconUrl: 'img/flag.png',
+    shadowUrl: 'img/flag-shadow.png',
+
+    iconSize:     [69, 95], // size of the icon
+    shadowSize:   [82, 55], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [9, 55],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 for (const [key, value] of Object.entries(markers))
 {
     let plural = "";
     if (Object.keys(value['people']).length > 1) plural ="s";
-    const devCount = `${Object.keys(value['people']).length} Développeur${plural}`;
+    const devCount = `<b>${(value['name'])}</b> : ${Object.keys(value['people']).length} Développeur${plural}`;
     
     const peopleCount = Object.keys(value['people']).length;
     let marker = L.marker([value['x'], value['y']], {
-        title: value['name'],
-        opacity: .75,
+        title: key,
+        opacity: .85,
         riseOnHover: true,
+        icon: flagIcon,
     })
     .addTo(map)
-    .bindPopup(`
-        <p class="city-name">${value['name']}</p>
-        <p>${devCount}</p>
-        <button class="see-more" data-city="${key}">Voir les infos</button>
-    `)
     .bindTooltip(devCount);
 };
 
@@ -365,11 +372,9 @@ window.addEventListener("click", (e) => {
             deleteAllCards();
         break;
         case "":
-            switch (e.target.className)
+            if (e.target.classList.contains("leaflet-marker-icon"))
             {
-                case "see-more":
-                    popModal(e.target.dataset.city);
-                break;
+                popModal(e.target.title);
             }    
         break;
     }
