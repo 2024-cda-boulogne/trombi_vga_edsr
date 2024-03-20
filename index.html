@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trombi Vivien Éric</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -13,6 +15,41 @@
     />
   </head>
   <body>
+    <header>
+      <h1>CDA 2024 BSM</h1>
+      <div class="nav-center">
+        <button id="displayStyles">Changer le style de la carte</button>
+        <div class="map-style-nav">
+          <i class="fa-solid fa-chevron-left" id="previousStyle"></i>
+          <nav id="nav">
+            <div class="carousel">
+              <button class="map-style map-btn-active" id="backdrop">Backdrop</button>
+              <button class="map-style" id="basic">Basic</button>
+              <button class="map-style" id="bright">Bright</button>
+              <button class="map-style" id="dataviz">Dataviz</button>
+              <button class="map-style" id="landscape">Landscape</button>
+              <button class="map-style" id="ocean">Ocean</button>
+              <button class="map-style" id="openstreetmap">OpenStreetMap</button>
+              <button class="map-style" id="outdoor">Outdoor</button>
+              <button class="map-style" id="satellite">Satellite</button>
+              <button class="map-style" id="streets">Streets</button>
+              <button class="map-style" id="toner">Toner</button>
+              <button class="map-style" id="topo">Topo</button>
+              <button class="map-style" id="winter">Winter</button>
+            </div>
+          </nav>
+          <i class="fa-solid fa-chevron-right" id="nextStyle"></i>
+        </div>
+      </div>
+      <div class="darkmode">
+        <button id="changeMode">
+          <input id="changeModeBtn" type="checkbox">
+          <div id="changeModeBox"></div>
+          <span id="changeModeSwitch"></span>
+        </button>
+      </div>
+
+    </header>
     <div id="map"></div>
     <div id="modal" class="hidden">
       <div class="modal-content">
@@ -27,12 +64,15 @@
       </div>
     </div>
 
+   
     <script
         src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""
     ></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.js"></script>
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
     <script src="js/scripts.js"></script>
-    
+    <script src="js/themes.js"></script>
   </body>
 </html>
