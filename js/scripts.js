@@ -29,8 +29,57 @@ const key = 'pgdNIeiA9riZaGOUspQU';
 const map = L.map('map').setView([xMap, yMap], zoom);
 const mtLayer = L.maptilerLayer({
 apiKey: key,
-style: L.MaptilerStyle.BACKDROP, // optional
+style: L.MaptilerStyle.TONER, // optional
 }).addTo(map);
+
+const mapStyleBtns = document.querySelectorAll(".map-style");
+mapStyleBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector(".map-btn-active").classList.toggle("map-btn-active");
+        let style = L.MaptilerStyle.STREETS;
+        switch (btn.id)
+        {
+            case 'backdrop':
+                style = L.MaptilerStyle.BACKDROP;
+            break;
+            case 'basic':
+                style = L.MaptilerStyle.BASIC;
+            break;
+            case 'bright':
+                style = L.MaptilerStyle.BRIGHT;
+            break;
+            case 'dataviz':
+                style = L.MaptilerStyle.DATAVIZ;
+            break;
+            case 'landscape':
+                style = L.MaptilerStyle.LANDSCAPE;
+            break;
+            case 'openstreetmap':
+                style = L.MaptilerStyle.OPENSTREETMAP;
+            break;
+            case 'outdoor':
+                style = L.MaptilerStyle.OUTDOOR;
+            break;
+            case 'satellite':
+                style = L.MaptilerStyle.SATELLITE;
+            break;
+            case 'streets':
+                style = L.MaptilerStyle.STREETS;
+            break;
+            case 'toner':
+                style = L.MaptilerStyle.TONER;
+            break;
+            case 'topo':
+                style = L.MaptilerStyle.TOPO;
+            break;
+            case 'winter':
+                style = L.MaptilerStyle.WINTER;
+            break;
+        }
+        mtLayer.setStyle(style);
+        btn.classList.toggle("map-btn-active");
+    });
+});
 
 const markers = {
     BoulogneSurMer: {
