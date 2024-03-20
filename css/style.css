@@ -568,7 +568,7 @@ header nav button:hover {
   border: 3px solid var(--clr-mode-btn-secondary);
   border-radius: 12px;
   background-color: var(--clr-mode-btn-primary);
-  background-image: url(/img/modes-ico.png);
+  background-image: url(../img/modes-ico.png);
   background-size: contain;
 }
 #changeMode input {
