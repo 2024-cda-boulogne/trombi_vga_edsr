@@ -33,6 +33,8 @@ const markers = {
                 firstname: "Vivien",
                 lastname:  "Gajac",
                 image:     "vivien.png",
+                github:    "viviengajac",
+                linkedin:  "vivien-gajac-b43a0b2a2",
                 stacks: {
                            0: "JS",
                            1: "PHP",
@@ -44,6 +46,8 @@ const markers = {
                 firstname: "William",
                 lastname:  "Truant",
                 image:     "William.png",
+                github:    "notlimai",
+                linkedin:  "william-truant-b57b92244",
                 stacks: {
                            0: "Symfony",
                            1: "React",
@@ -200,12 +204,23 @@ const markers = {
 
 for (const [key, value] of Object.entries(markers))
 {
-    let marker = L.marker([value['x'], value['y']])
+    let plural = "";
+    if (Object.keys(value['people']).length > 1) plural ="s";
+    const devCount = `${Object.keys(value['people']).length} Développeur${plural}`;
+    
+    const peopleCount = Object.keys(value['people']).length;
+    let marker = L.marker([value['x'], value['y']], {
+        title: value['name'],
+        opacity: .75,
+        riseOnHover: true,
+    })
     .addTo(map)
     .bindPopup(`
         <p class="city-name">${value['name']}</p>
-        <button class="see-more" data-city="${key}">Voir plus</button>
-    `);
+        <p>${devCount}</p>
+        <button class="see-more" data-city="${key}">Voir les infos</button>
+    `)
+    .bindTooltip(devCount);
 };
 
 window.addEventListener("click", (e) => {
@@ -214,6 +229,7 @@ window.addEventListener("click", (e) => {
         case "modal":
         case "closeModal":
             modal.classList.toggle("hidden");
+            deleteAllCards();
         break;
         case "":
             switch (e.target.className)
@@ -226,6 +242,12 @@ window.addEventListener("click", (e) => {
     }
 });
 
+const deleteAllCards = () => {
+    const cards = document.querySelector(".cards");
+    while (cards.firstChild) {
+        cards.removeChild(cards.firstChild);
+    }
+}
 const popModal = (city) => {
     hydrateModal(city);
     modal.classList.toggle("hidden");
@@ -233,6 +255,7 @@ const popModal = (city) => {
 
 const hydrateModal = (city => {
 
+    document.querySelector("#modal-city-name").textContent = markers[city]["name"];
     const stackImages = {
         HTML:    "html-1.svg",
         CSS:     "w3_css-icon.svg",
@@ -241,7 +264,7 @@ const hydrateModal = (city => {
         MySQL:   "mysql-logo-svgrepo-com.svg",
         Angular: "Angular_full_color_logo.svg.png",
         React:   "React-icon.svg.png",
-        Symfony: "symfony-original-icon-512x512-ay9yzmde.png",
+        Symfony: "symfony-logo.png",
         Java:    "Java_Logo.svg",
         dotnet:  "Microsoft_.NET_Logo.svg.png",
         Csharp:  "Logo_C_sharp.svg",
@@ -252,12 +275,17 @@ const hydrateModal = (city => {
         typescript: "Typescript_logo_2020.svg.png",
         nodejs:    "node.png",
     }
+
     const cards = document.querySelector(".cards");
+
+    let i = 0;
 
     for (const [key, value] of Object.entries(markers[city]["people"])) {
 // console.log(value)
         let card = document.createElement("div");
         card.classList.add("card");
+        card.setAttribute("style", `--i: ${i}s`);
+        i+=.25;
 
         let cardTop = document.createElement("div");
 
@@ -266,6 +294,20 @@ const hydrateModal = (city => {
 
         let title = document.createElement("h3");
         title.textContent = `${value["firstname"]} ${value["lastname"]}`;
+
+        let socialMedias = document.createElement("div");
+        socialMedias.classList.add("social-medias");
+        let github = document.createElement("a");
+        github.setAttribute("href", `https://github.com/${value["github"]}`);
+        github.setAttribute("target", "_blank");
+        github.classList.add("github");
+        let linkedin = document.createElement("a");
+        linkedin.setAttribute("href", `https://linkedin.com/in/${value["linkedin"]}`);
+        linkedin.setAttribute("target", "_blank");
+        linkedin.classList.add("linkedin");
+        
+        socialMedias.appendChild(github);
+        socialMedias.appendChild(linkedin);
 
         let stacksTitle = document.createElement("p");
         stacksTitle.textContent = "Les stacks";
@@ -279,12 +321,27 @@ const hydrateModal = (city => {
             let newStack = document.createElement("img");
             newStack.classList.add("small-img");
             newStack.setAttribute("src", `img/${stackImages[stack]}`);
-
+            switch (stack)
+            {
+                case "Symfony":
+                case "nextjs":
+                    newStack.classList.add("white-stack");
+                break;
+                case "PHP":
+                    newStack.classList.add("big-stack");
+                break;
+                
+                case "MySQL":
+                    newStack.classList.add("mysql");
+                    newStack.classList.add("big-stack");
+                break;
+            }
             stacks.appendChild(newStack);
         }
 
         cardTop.appendChild(picture);
         cardTop.appendChild(title);
+        cardTop.appendChild(socialMedias);
         cardTop.appendChild(stacksTitle);
 
         card.appendChild(cardTop);

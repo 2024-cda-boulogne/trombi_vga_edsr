@@ -1,6 +1,6 @@
 :root {
     --clr-card:       #494242;
-    --clr-card-hover: #993434;
+    --clr-card-hover: #b91919;
 }
 
 * {
@@ -17,14 +17,25 @@
 .leaflet-marker-icon {
   transition: 0.25s;
 }
+
 .leaflet-marker-icon:hover {
   filter: hue-rotate(145deg);
+  opacity: 1 !important;
 }
 
 .leaflet-popup-content-wrapper {
   text-align: center !important;
 }
+
+.leaflet-popup-content p:nth-child(1) {
+  margin-bottom: .5rem;
+}
+
+.leaflet-popup-content p:nth-child(2) {
+  margin-top: 0;
+}
 .city-name {
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .see-more {
@@ -64,6 +75,15 @@
   display: flex;
   padding: 5px 0;
 }
+#modal-city-name {
+  margin-left: 1rem;
+  color: #ffffff;
+  text-shadow:
+  0 0 4px var(--clr-card),
+  0 0 8px var(--clr-card),
+  0 0 16px var(--clr-card),
+  0 0 32px var(--clr-card);
+}
 #closeModal {
   position: relative;
   display: flex;
@@ -82,11 +102,12 @@
   position: absolute;
   width: 19px;
   height: 3px;
-  background: #b60f0f;
+  background: var(--clr-card-hover);
   pointer-events: none;
+  transition: .25s;
 }
 #closeModal:hover span {
-  background: rgb(223, 14, 14);
+  background: rgb(240, 25, 25);
 }
 #closeModal span:nth-child(1) {
   transform: rotate(45deg);
@@ -123,13 +144,15 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 3px var(--clr-card);
-    background: #ffffff50;
+    /* background: #ffffff50; */
+    background: linear-gradient(45deg, #ffffff50 10%, #ffffffbb, #ffffff50 90%);
     padding: 20px;
     max-width: 400px;
     margin: 20px auto;
     user-select: none;
     transition: .25s;
-    animation: appears 1s linear forwards;
+    transform: rotateY(90deg);
+    animation: appears .25s linear forwards;
     animation-delay: var(--i);
 }
 @keyframes appears {
@@ -144,6 +167,7 @@
 .card:hover {
     box-shadow: 0 0 3px var(--clr-card-hover);
     background: #ffffff80;
+    background: linear-gradient(45deg, #ffffff80 10%, #ffffffea, #ffffff80 90%);
 }
 .card::before,
 .card::after {
@@ -152,6 +176,7 @@
     width: 25%;
     height: 25%;
     transition: .25s;
+    z-index: -1;
 }
 
 .card::before {
@@ -197,10 +222,8 @@
 .card:hover div:first-child img {
     object-fit: cover;
     object-position: top;
-}
-
-.card:hover div:first-child img {
-    box-shadow: 0 0 3px var(--clr-card-hover);
+    background: radial-gradient(#1b1414e3 30%, var(--clr-card-hover));
+    box-shadow: 0 0 10px var(--clr-card-hover);
 }
 
 .card div:first-child h3 {
@@ -222,6 +245,7 @@
 .card:hover div:first-child p {
     background: var(--clr-card-hover);
     color: #d9d9d9;
+    letter-spacing: .05rem;
 }
 .card div:first-child p::before {
     content: '';
@@ -263,6 +287,39 @@
     transform: scale(1);
 }
 
+.card .social-medias {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card .social-medias a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-size: 80%;
+    transition: .25s;
+}
+
+.github {
+    background-color: #282828;
+    background-image: url(/img/github-logo-white.png);
+    background-position: center center;
+}
+.card:hover .github {
+  box-shadow: 0 0 10px #282828;
+}
+
+.linkedin {
+  background-color: #2797CF;
+  background-image: url(/img/linkedin-logo-white.png);
+  background-position: center center;
+}
+.card:hover .linkedin {
+  box-shadow: 0 0 10px #2797CF;
+}
+
 .card .stacks {
     display: flex;
     justify-content: center;
@@ -274,13 +331,30 @@
 .card:hover .stacks {
     background: var(--clr-card-hover);
 }
-
+.card .stacks .big-stack {
+  transform: scale(1.1);
+}
+.card:hover .stacks .big-stack {
+  transform: scale(1.25);
+}
+.card .stacks .white-stack {
+  border-radius: 50%;
+  background-size: 100%;
+}
 .card:hover .stacks .mysql {
-    filter: brightness(2);
+    filter: brightness(2) hue-rotate(180deg);
+}
+
+.card:hover .stacks .white-stack {
+  background-color: #fff;
 }
 
 @media screen and (min-width: 680px) {
     .modal-content {
       width: auto;
+    }
+    .card .social-medias a {
+      width: 39px;
+      height: 39px;
     }
   }
