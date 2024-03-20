@@ -16,11 +16,20 @@ if (window.innerWidth > 680)
     yMap = 2.3;
     zoom = 8;
 }
-let map = L.map('map').setView([xMap, yMap], zoom);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+// let map = L.map('map').setView([xMap, yMap], zoom);
+
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     maxZoom: 19,
+//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+// }).addTo(map);
+
+const key = 'pgdNIeiA9riZaGOUspQU';
+
+const map = L.map('map').setView([xMap, yMap], zoom);
+const mtLayer = L.maptilerLayer({
+apiKey: key,
+style: L.MaptilerStyle.BACKDROP, // optional
 }).addTo(map);
 
 const markers = {

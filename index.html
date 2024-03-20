@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trombi Vivien Éric</title>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -13,6 +14,32 @@
     />
   </head>
   <body>
+    <header>
+      <h1>CDA 2024 BSM</h1>
+      <div>
+        <p>Changer le style de la carte</p>
+        <nav>
+          <button class="map-style" id="backdrop">Backdrop</button>
+          <button class="map-style" id="basic">Basic</button>
+          <button class="map-style" id="bright">Bright</button>
+          <button class="map-style" id="dataviz">Dataviz</button>
+          <button class="map-style" id="landscape">landscape</button>
+          <button class="map-style" id="ocean">Ocean</button>
+          <button class="map-style" id="openstreetmap">OpenStreetMap</button>
+          <button class="map-style" id="outdoor">Outdoor</button>
+          <button class="map-style" id="satellite">Satellite</button>
+          <button class="map-style" id="streets">Streets</button>
+          <button class="map-style" id="toner">Toner</button>
+          <button class="map-style" id="topo">Topo</button>
+          <button class="map-style" id="winter">Winter</button>
+        </nav>
+      </div>
+      <button id="changeMode">
+        <input id="changeModeBtn" type="checkbox">
+        <div id="changeModeBox"></div>
+        <span id="changeModeSwitch"></span>
+      </button>
+    </header>
     <div id="map"></div>
     <div id="modal" class="hidden">
       <div class="modal-content">
@@ -27,11 +54,14 @@
       </div>
     </div>
 
+   
     <script
         src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""
     ></script>
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.js"></script>
+    <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
     <script src="js/scripts.js"></script>
     
   </body>
