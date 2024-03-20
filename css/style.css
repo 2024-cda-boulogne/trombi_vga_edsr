@@ -587,6 +587,20 @@ header nav button:hover {
   background: var(--clr-mode-btn-tertiary);
 }
 
+#map a:last-child {
+  margin-left: 35px;
+}
+.logo-simplon {
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  bottom: 4px;
+  left: 4px;
+  background-image: url(/img/logo-simplon.png);
+  background-size: contain;
+  z-index: 99999999999999999999;
+}
+
 @media screen and (min-width: 680px) {
   header nav button {
     height: 35px;
