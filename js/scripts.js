@@ -142,7 +142,7 @@ const markers = {
             0: {
                 firstname: "Kevin",
                 lastname:  "Ledez",
-                image:     "kevin.png",
+                image:     "Kevin.png",
                 hobbies: {
                     0: "Jeux vidéo",
                     1: "Programmation",
