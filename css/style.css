@@ -1,17 +1,17 @@
 :root {
-  --theme:                   "light";
-  --clr-primary:             #222;
-  --clr-secondary:           #fff;
+  --theme: "light";
+  --clr-primary: #222;
+  --clr-secondary: #fff;
 
-  --clr-card:                #494242;
-  --clr-card-hover:          #b91919;
+  --clr-card: #494242;
+  --clr-card-hover: #b91919;
 
-  --clr-mode-btn-primary:    #eee;
-  --clr-mode-btn-secondary:  #777;
-  --clr-mode-btn-tertiary:   #333;
+  --clr-mode-btn-primary: #eee;
+  --clr-mode-btn-secondary: #777;
+  --clr-mode-btn-tertiary: #333;
 
-  --map-btn:                 #44406d;
-  --map-btn-active:          #36a969;
+  --map-btn: #44406d;
+  --map-btn-active: #36a969;
 }
 
 * {
@@ -41,7 +41,7 @@ header .darkmode {
 }
 header p {
   padding: 5px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   text-align: center;
 }
 
@@ -65,7 +65,7 @@ header nav button {
   height: 45px;
   border-radius: 23px;
   padding: 0 10px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 600;
   border: none;
   background: var(--map-btn);
@@ -92,6 +92,7 @@ header nav button:hover {
 
 .leaflet-popup-content-wrapper {
   text-align: center !important;
+  background: #ffffffd4 !important;
 }
 
 .leaflet-popup-content p:nth-child(1) {
@@ -498,7 +499,6 @@ header nav button:hover {
   border-radius: 8px;
   background: var(--clr-mode-btn-tertiary);
 }
-
 
 @media screen and (min-width: 680px) {
   .modal-content {
