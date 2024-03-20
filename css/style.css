@@ -19,6 +19,7 @@
   --clr-card-text-primary:   #333;
   --clr-card-text-secondary: #666;
   --clr-popup-bg:            #ffffffd4;
+  --clr-github-hover:        #282828;
 }
 
 * {
@@ -502,7 +503,7 @@ header nav button:hover {
   background-position: center center;
 }
 .card:hover .github {
-  box-shadow: 0 0 10px #282828;
+  box-shadow: 0 0 10px var(--clr-github-hover);
 }
 
 .linkedin {
