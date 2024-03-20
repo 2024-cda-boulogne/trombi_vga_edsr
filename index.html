@@ -16,29 +16,34 @@
   <body>
     <header>
       <h1>CDA 2024 BSM</h1>
-      <div>
+      <div class="nav-center">
         <p>Changer le style de la carte</p>
         <nav>
-          <button class="map-style" id="backdrop">Backdrop</button>
-          <button class="map-style" id="basic">Basic</button>
-          <button class="map-style" id="bright">Bright</button>
-          <button class="map-style" id="dataviz">Dataviz</button>
-          <button class="map-style" id="landscape">landscape</button>
-          <button class="map-style" id="ocean">Ocean</button>
-          <button class="map-style" id="openstreetmap">OpenStreetMap</button>
-          <button class="map-style" id="outdoor">Outdoor</button>
-          <button class="map-style" id="satellite">Satellite</button>
-          <button class="map-style" id="streets">Streets</button>
-          <button class="map-style" id="toner">Toner</button>
-          <button class="map-style" id="topo">Topo</button>
-          <button class="map-style" id="winter">Winter</button>
+          <div class="carousel">
+            <button class="map-style" id="backdrop">Backdrop</button>
+            <button class="map-style" id="basic">Basic</button>
+            <button class="map-style" id="bright">Bright</button>
+            <button class="map-style" id="dataviz">Dataviz</button>
+            <button class="map-style" id="landscape">Landscape</button>
+            <button class="map-style" id="ocean">Ocean</button>
+            <button class="map-style" id="openstreetmap">OpenStreetMap</button>
+            <button class="map-style" id="outdoor">Outdoor</button>
+            <button class="map-style" id="satellite">Satellite</button>
+            <button class="map-style" id="streets">Streets</button>
+            <button class="map-style" id="toner">Toner</button>
+            <button class="map-style" id="topo">Topo</button>
+            <button class="map-style" id="winter">Winter</button>
+          </div>
         </nav>
       </div>
-      <button id="changeMode">
-        <input id="changeModeBtn" type="checkbox">
-        <div id="changeModeBox"></div>
-        <span id="changeModeSwitch"></span>
-      </button>
+      <div class="darkmode">
+        <button id="changeMode">
+          <input id="changeModeBtn" type="checkbox">
+          <div id="changeModeBox"></div>
+          <span id="changeModeSwitch"></span>
+        </button>
+      </div>
+
     </header>
     <div id="map"></div>
     <div id="modal" class="hidden">
@@ -63,6 +68,6 @@
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.js"></script>
     <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
     <script src="js/scripts.js"></script>
-    
+    <script src="js/themes.js"></script>
   </body>
 </html>
