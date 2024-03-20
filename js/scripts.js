@@ -335,17 +335,29 @@ const markers = {
     },
 };
 
+const flagIcon = L.icon({
+    iconUrl: 'img/flag.png',
+    shadowUrl: 'img/flag-shadow.png',
+
+    iconSize:     [69, 95], // size of the icon
+    shadowSize:   [82, 55], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [9, 55],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 for (const [key, value] of Object.entries(markers))
 {
     let plural = "";
     if (Object.keys(value['people']).length > 1) plural ="s";
-    const devCount = `${(value['name'])} : ${Object.keys(value['people']).length} Développeur${plural}`;
+    const devCount = `<b>${(value['name'])}</b> : ${Object.keys(value['people']).length} Développeur${plural}`;
     
     const peopleCount = Object.keys(value['people']).length;
     let marker = L.marker([value['x'], value['y']], {
         title: key,
-        opacity: .75,
+        opacity: .85,
         riseOnHover: true,
+        icon: flagIcon,
     })
     .addTo(map)
     .bindTooltip(devCount);
