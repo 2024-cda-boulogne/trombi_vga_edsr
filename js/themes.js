@@ -32,6 +32,7 @@ const switchTheme = (theme) => {
                 "card-text-secondary": "#666",
                 "popup-bg":            "#ffffffd4",
                 "card":                "#494242",
+                "github-hover":        "#282828",
             },
         },
         "dark": {
@@ -57,6 +58,7 @@ const switchTheme = (theme) => {
                 "card-text-secondary": "#ddd",
                 "popup-bg":            "#000000d4",
                 "card":                "#ccb8b8",
+                "github-hover":        "#e4e4e4",
             },
         },
     };
