@@ -34,6 +34,7 @@
 .leaflet-popup-content p:nth-child(2) {
   margin-top: 0;
 }
+
 .city-name {
   font-size: 1.2rem;
   font-weight: 600;
@@ -257,7 +258,9 @@
 .card:hover .hobbies p:nth-child(3) {
   transition-delay: .75s;
 }
-
+.card:hover .hobbies p:nth-child(4) {
+  transition-delay: 1s;
+}
 .card div:first-child h3 {
     transition: .25s;
 }
