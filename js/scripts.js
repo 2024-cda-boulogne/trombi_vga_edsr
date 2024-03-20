@@ -404,7 +404,7 @@ const hydrateModal = (city => {
         React:   "React-icon.svg.png",
         Symfony: "symfony-logo.png",
         Java:    "Java_Logo.svg",
-        dotnet:  "Microsoft_.NET_Logo.svg.png",
+        dotnet:  "Microsoft_NET_logo.png",
         Csharp:  "Logo_C_sharp.svg",
         nextjs:  "next-js.svg",
         vue:     "Vue.js_Logo_2.svg",
