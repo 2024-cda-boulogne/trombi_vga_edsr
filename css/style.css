@@ -3,17 +3,22 @@
   --theme:                   "light";
   --clr-primary:             #222;
   --clr-secondary:           #fff;
-  --clr-card: #494242;
-  --clr-card-hover: #b91919;
-  --clr-mode-btn-primary: #eee;
-  --clr-mode-btn-secondary: #777;
-  --clr-mode-btn-tertiary: #333;
-  --map-btn: #44406d;
-  --map-btn-active: #36a969;
+  --clr-card:                #494242;
+  --clr-card-hover:          #b91919;
+  --clr-mode-btn-primary:    #eee;
+  --clr-mode-btn-secondary:  #777;
+  --clr-mode-btn-tertiary:   #333;
+  --map-btn:                 #44406d;
+  --map-btn-active:          #36a969;
   --map-style-nav:           rgb(177, 171, 206);
   --map-btn:                 #205b92;
   --map-btn-active:          #1b7a46;
   --clr-map-style-p:         #1b7a46;
+  --clr-card-gradient:       linear-gradient(45deg, #ffffff50 10%, #ffffffbb, #ffffff50 90%);
+  --clr-card-gradient-hover: linear-gradient(45deg, #ffffff80 10%, #ffffffea, #ffffff80 90%);
+  --clr-card-text-primary:   #333;
+  --clr-card-text-secondary: #666;
+  --clr-popup-bg:            #ffffffd4;
 }
 
 * {
@@ -170,9 +175,13 @@ header nav button:hover {
 
 .leaflet-popup-content-wrapper {
   text-align: center !important;
-  background: #ffffffd4 !important;
+  background: var(--clr-popup-bg) !important;
 }
 
+.leaflet-popup-content p,
+.leaflet-popup-content button {
+  color: var(--clr-card-text-primary);
+}
 .leaflet-popup-content p:nth-child(1) {
   margin-bottom: 0.5rem;
 }
@@ -286,7 +295,7 @@ header nav button:hover {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 0 3px var(--clr-card);
-  background: linear-gradient(45deg, #ffffff50 10%, #ffffffbb, #ffffff50 90%);
+  background: var(--clr-card-gradient);
   padding: 20px;
   max-width: 400px;
   margin: 20px auto;
@@ -308,7 +317,7 @@ header nav button:hover {
 .card:hover {
   box-shadow: 0 0 3px var(--clr-card-hover);
   background: #ffffff80;
-  background: linear-gradient(45deg, #ffffff80 10%, #ffffffea, #ffffff80 90%);
+  background: var(--clr-card-gradient-hover);
 }
 .card::before,
 .card::after {
@@ -438,7 +447,7 @@ header nav button:hover {
   top: 0;
   width: 30%;
   height: 2px;
-  background: var(--clr-card);
+  background: var(--clr-card-text-secondary);
   transition: 0.25s;
 }
 
@@ -449,14 +458,14 @@ header nav button:hover {
 .card h3 {
   margin: 0;
   font-size: 20px;
-  color: #333;
+  color: var(--clr-card-text-primary);
   margin-bottom: 10px;
 }
 
 .card p {
   margin: 5px 0;
   font-size: 16px;
-  color: #666;
+  color: var(--clr-card-text-secondary);
 }
 
 .card .small-img {
