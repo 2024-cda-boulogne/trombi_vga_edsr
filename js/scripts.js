@@ -354,6 +354,7 @@ for (const [key, value] of Object.entries(markers))
     
     const peopleCount = Object.keys(value['people']).length;
     let marker = L.marker([value['x'], value['y']], {
+        title: key,
         opacity: .85,
         riseOnHover: true,
         icon: flagIcon,
