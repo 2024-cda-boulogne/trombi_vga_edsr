@@ -498,7 +498,7 @@ header nav button:hover {
 
 .github {
   background-color: #282828;
-  background-image: url(/img/github-logo-white.png);
+  background-image: url(../img/github-logo-white.png);
   background-position: center center;
 }
 .card:hover .github {
@@ -507,7 +507,7 @@ header nav button:hover {
 
 .linkedin {
   background-color: #2797cf;
-  background-image: url(/img/linkedin-logo-white.png);
+  background-image: url(../img/linkedin-logo-white.png);
   background-position: center center;
 }
 .card:hover .linkedin {
