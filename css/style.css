@@ -122,21 +122,13 @@
     gap: 50px;
     padding: 0 15px;
 }
-/* .card {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 150px;
-  height: 320px;
-  border-radius: 10px;
-} */
+
 /* dynamic */
 .hidden {
   display: none !important;
 }
 
-
-
+/* card */
 .card {
     position: relative;
     width: 300px;
@@ -144,7 +136,6 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 0 0 3px var(--clr-card);
-    /* background: #ffffff50; */
     background: linear-gradient(45deg, #ffffff50 10%, #ffffffbb, #ffffff50 90%);
     padding: 20px;
     max-width: 400px;
@@ -226,6 +217,15 @@
     box-shadow: 0 0 10px var(--clr-card-hover);
 }
 
+.card div:first-child {
+  position: relative;
+}
+.card .hobbies {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
 .card div:first-child h3 {
     transition: .25s;
 }
@@ -233,7 +233,7 @@
 .card:hover div:first-child h3 {
     letter-spacing: .05rem;
 }
-.card div:first-child p {
+.card div:nth-child(2) p {
     position: relative;
     display: flex;
     justify-content: center;
@@ -242,12 +242,12 @@
     transition: .25s;
 }
 
-.card:hover div:first-child p {
+.card:hover div:nth-child(2) p {
     background: var(--clr-card-hover);
     color: #d9d9d9;
     letter-spacing: .05rem;
 }
-.card div:first-child p::before {
+.card div:nth-child(2) p::before {
     content: '';
     position: absolute;
     top: 0;
@@ -257,7 +257,7 @@
     transition: .25s;
 }
 
-.card:hover div:first-child p::before {
+.card:hover div:nth-child(2) p::before {
     width: 100%;
     background: var(--clr-card-hover);
 }
