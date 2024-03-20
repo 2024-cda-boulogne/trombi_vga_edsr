@@ -302,6 +302,9 @@ const hydrateModal = (city => {
 
         let hobbies = document.createElement("div");
         hobbies.classList.add("hobbies");
+        let hobbiesTitle = document.createElement("p");
+        hobbiesTitle.textContent = "Les hobbies";
+        hobbies.appendChild(hobbiesTitle);
         for (const [key, hobby] of Object.entries(value["hobbies"])) {
             let newHobby = document.createElement("p");
             newHobby.textContent = hobby;
