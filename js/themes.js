@@ -26,6 +26,11 @@ const switchTheme = (theme) => {
                 "code-example-text":   "#3D7B7B",
                 "code-example-border": "#eaecf0",
                 "map-style-p":         "#1b7a46",
+                "card-gradient":       "linear-gradient(45deg, #ffffff50 10%, #ffffffbb, #ffffff50 90%)",
+                "card-gradient-hover": "linear-gradient(45deg, #ffffff80 10%, #ffffffea, #ffffff80 90%)",
+                "card-text-primary":   "#333",
+                "card-text-secondary": "#666",
+                "popup-bg":            "#ffffffd4",
             },
         },
         "dark": {
@@ -45,6 +50,11 @@ const switchTheme = (theme) => {
                 "code-example-text":   "#9fcece",
                 "code-example-border": "#59645e",
                 "map-style-p":         "#7ad4a3",
+                "card-gradient":       "linear-gradient(45deg, #22222250 10%, #222222bb, #22222250 90%)",
+                "card-gradient-hover": "linear-gradient(45deg, #22222280 10%, #222222ea, #22222280 90%)",
+                "card-text-primary":   "#eee",
+                "card-text-secondary": "#ddd",
+                "popup-bg":            "#000000d4",
             },
         },
     };
