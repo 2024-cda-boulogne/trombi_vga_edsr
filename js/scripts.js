@@ -22,6 +22,7 @@ const key = 'pgdNIeiA9riZaGOUspQU';
 const map = L.map('map', {
     minZoom: 3,
     maxZoom: 19,
+    worldCopyJump: true,
 })
 .setView([xMap, yMap], zoom);
 
