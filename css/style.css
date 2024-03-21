@@ -216,7 +216,7 @@ header nav button:hover {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 1rem 0;
   background-color: #00000080;
   z-index: 9999;
   overflow: scroll;
@@ -588,24 +588,13 @@ header nav button:hover {
   background: var(--clr-mode-btn-tertiary);
 }
 
-/* #map a:last-child {
-  margin-left: 35px;
-} */
-/* .logo-simplon {
-  width: 35px;
-  height: 35px;
-  position: fixed;
-  bottom: 4px;
-  left: 4px;
-  background-image: url(/img/logo-simplon.png);
-  background-size: contain;
-  z-index: 99999999999999999999;
-} */
-
 @media screen and (min-width: 680px) {
   header nav button {
     height: 35px;
     margin: 5px 0;
+  }
+  #modal {
+    align-items: center;
   }
   .modal-content {
     width: auto;
