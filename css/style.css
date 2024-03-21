@@ -253,8 +253,10 @@ header nav button:hover {
 #modal-city-name {
   margin-left: 1rem;
   color: #ffffff;
-  text-shadow: 0 0 4px var(--clr-card), 0 0 8px var(--clr-card),
-    0 0 16px var(--clr-card), 0 0 32px var(--clr-card);
+  text-shadow: 0 0 4px #494242,
+  0 0 8px #494242,
+  0 0 16px #494242,
+  0 0 32px #494242;
 }
 #closeModal {
   position: relative;
