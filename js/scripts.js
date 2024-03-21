@@ -339,10 +339,10 @@ const flagIcon = L.icon({
     iconUrl: 'img/flag.png',
     shadowUrl: 'img/flag-shadow.png',
 
-    iconSize:     [69, 95], // size of the icon
+    iconSize:     [70, 70], // size of the icon
     shadowSize:   [82, 55], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [9, 55],  // the same for the shadow
+    iconAnchor:   [22, 55], // point of the icon which will correspond to marker's location
+    shadowAnchor: [11, 36],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
