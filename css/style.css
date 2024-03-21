@@ -39,11 +39,25 @@ header {
   color: var(--clr-primary);
   z-index: 999999999;
 }
+header .header-title {
+  display: flex;
+  user-select: none;
+}
+header .header-title .logo-simplon {
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  background-image: url(../img/logo-simplon.png);
+  background-size: contain;
+  background-position: center;
+}
 header h1 {
+  display: none;
   font-size: 1rem;
   text-align: center;
+  white-space: nowrap;
 }
-header h1,
+header .header-title,
 header .darkmode {
   width: 150px;
   display: flex;
@@ -220,7 +234,7 @@ header nav button:hover {
   padding: 1rem 0;
   background-color: #00000080;
   z-index: 9999;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .modal-content {
   margin: auto;
@@ -595,12 +609,20 @@ header nav button:hover {
 }
 
 @media screen and (min-width: 680px) {
+  header .header-title,
+  header .darkmode {
+    width: 250px;
+  }
+  header h1 {
+    display: flex;
+  }
   header nav button {
     height: 35px;
     margin: 5px 0;
   }
   #modal {
     align-items: center;
+    overflow: hidden;
   }
   .modal-content {
     width: auto;

@@ -19,7 +19,12 @@ if (window.innerWidth > 680)
 
 const key = 'pgdNIeiA9riZaGOUspQU';
 
-const map = L.map('map').setView([xMap, yMap], zoom);
+const map = L.map('map', {
+    minZoom: 3,
+    maxZoom: 19,
+})
+.setView([xMap, yMap], zoom);
+
 const mtLayer = L.maptilerLayer({
 apiKey: key,
 style: L.MaptilerStyle.BACKDROP, // optional
@@ -354,7 +359,7 @@ for (const [key, value] of Object.entries(markers))
     
     const peopleCount = Object.keys(value['people']).length;
     let marker = L.marker([value['x'], value['y']], {
-        title: key,
+        alt: key,
         opacity: .85,
         riseOnHover: true,
         icon: flagIcon,
@@ -374,7 +379,7 @@ window.addEventListener("click", (e) => {
         case "":
             if (e.target.classList.contains("leaflet-marker-icon"))
             {
-                popModal(e.target.title);
+                popModal(e.target.alt);
             }    
         break;
     }
