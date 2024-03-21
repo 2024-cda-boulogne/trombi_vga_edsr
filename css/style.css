@@ -121,6 +121,7 @@ header .nav-center .map-style-nav {
   z-index: 9999;
 }
 
+.nav-center:focus-within .map-style-nav,
 .nav-center:hover .map-style-nav,
 header #displayStyles:hover ~ .map-style-nav {
   transform: scaleY(1);
