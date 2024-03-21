@@ -101,7 +101,7 @@ header .nav-center {
 header nav {
   position: relative;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding-bottom: 5px;
