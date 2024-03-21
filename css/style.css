@@ -541,7 +541,7 @@ header nav button:hover {
   border-radius: 50%;
   background-size: 100%;
 }
-.card:hover .stacks .mysql {
+.card:hover .stacks .hover-filter {
   filter: brightness(2) hue-rotate(180deg);
 }
 

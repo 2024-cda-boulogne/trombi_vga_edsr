@@ -480,9 +480,10 @@ const hydrateModal = (city => {
                 case "PHP":
                     newStack.classList.add("big-stack");
                 break;
-                
+                case "nodejs":
                 case "MySQL":
-                    newStack.classList.add("mysql");
+                case "Java":
+                    newStack.classList.add("hover-filter");
                     newStack.classList.add("big-stack");
                 break;
             }
