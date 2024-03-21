@@ -4,7 +4,8 @@
   --clr-primary:             #222;
   --clr-secondary:           #fff;
   --clr-card:                #494242;
-  --clr-card-hover:          #1E1E54;
+  --clr-card-hover:          #2b2b75;
+  --clr-card-hover-gradient: linear-gradient(45deg, #2b2b75, #4343b1);
   --clr-mode-btn-primary:    #eee;
   --clr-mode-btn-secondary:  #777;
   --clr-mode-btn-tertiary:   #333;
@@ -216,7 +217,7 @@ header nav button:hover {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 1rem 0;
   background-color: #00000080;
   z-index: 9999;
   overflow: scroll;
@@ -402,7 +403,7 @@ header nav button:hover {
   opacity: 0;
   padding: 0;
   margin: 0;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
   transition: 0.25s;
 }
 .card:hover .hobbies p {
@@ -494,7 +495,11 @@ header nav button:hover {
   height: 45px;
   border-radius: 50%;
   background-size: 80%;
-  transition: 0.25s;
+  transition: 0.15s;
+}
+.card .social-medias a:hover {
+  transform: scale(1.1);
+  filter: brightness(1.25);
 }
 
 .github {
@@ -536,12 +541,13 @@ header nav button:hover {
   border-radius: 50%;
   background-size: 100%;
 }
-.card:hover .stacks .mysql {
+.card:hover .stacks .hover-filter {
   filter: brightness(2) hue-rotate(180deg);
 }
 
 .card:hover .stacks .white-stack {
   background-color: #fff;
+  box-shadow: 0 0 5px #fff;
 }
 
 /* dark mode */
@@ -588,28 +594,20 @@ header nav button:hover {
   background: var(--clr-mode-btn-tertiary);
 }
 
-/* #map a:last-child {
-  margin-left: 35px;
-} */
-/* .logo-simplon {
-  width: 35px;
-  height: 35px;
-  position: fixed;
-  bottom: 4px;
-  left: 4px;
-  background-image: url(/img/logo-simplon.png);
-  background-size: contain;
-  z-index: 99999999999999999999;
-} */
-
 @media screen and (min-width: 680px) {
   header nav button {
     height: 35px;
     margin: 5px 0;
   }
+  #modal {
+    align-items: center;
+  }
   .modal-content {
     width: auto;
   }
+  /* .card .hobbies p {
+    font-size: 1rem;
+  } */
   .card .social-medias a {
     width: 39px;
     height: 39px;
