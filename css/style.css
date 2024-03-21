@@ -180,6 +180,19 @@ header nav button:hover {
   height: calc(100vh - var(--nav-height));
 }
 
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  background: var(--clr-mode-btn-primary) !important;
+  color: var(--clr-mode-btn-tertiary) !important;
+}
+
+.leaflet-control-zoom-in span,
+.leaflet-control-zoom-out span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 26px;
+}
 .leaflet-marker-icon {
   transition: 0.25s;
 }
